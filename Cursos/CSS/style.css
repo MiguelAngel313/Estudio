@@ -1,0 +1,206 @@
+/* TODO: Selector */
+p{color: yellow;
+font-family: sans-serif;}
+
+#rojo{color: red;}
+
+.azul{color: blue;}
+
+/* Aplica los estilos a cada elemento */
+div, li{
+    background-color: burlywood;
+}
+
+/* Aplica los estilos a los elementos hijos */
+div ul li a{
+    color: red;
+}
+
+/* Hijos directos */
+article > ul{
+    color: blue;
+}
+
+li a:hover{
+    color: green;
+}
+
+input:focus{
+   background-color: bisque;
+}
+/* También se puede aplicar por propiedades */
+input:checked{
+    margin: 20px;
+}
+
+/* Por atributos de datos */
+[data-rojo="true"]{
+    color: red;
+}
+
+/* Selecciona todos los hermanos siguientes */
+.hermano ~ p{
+    color: black;
+}
+
+/* Solo selecciona un único hermano.(Justo el siguiente) */
+.hermanoUnico + p{
+    color: red;
+}
+
+#id1{
+    color: green;
+}
+
+.clase1{
+    color: darkcyan;
+}
+/* atributo del elemento que contiene la urls tal tal tal */
+a[href="https://www.google.com"]{
+    font: bolder 20px Arial;
+}
+
+span{
+    font-family: "Noto Sans Syriac", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+/* TODO: Text styling */
+/* Direccionamiento left to right (ltr) o right to left (rtl) */
+.direccion{
+    direction: rtl;
+}
+
+/* Alineamiento de texto. Ajusta el texto en la posicion del conteneror especificada */
+.aling{
+    width: 30%;
+    text-align: justify;
+}
+
+/* Decoracion de texto: Agrega líneas debajo encima o sobre el texto */
+.decoracion{
+    text-decoration: underline;
+}
+
+.transformar{
+    text-transform: uppercase;
+}
+
+.espaciado{
+    line-height: 30px;
+    word-spacing: 5px;
+    letter-spacing: 5px;
+}
+
+
+.sombras{
+    text-shadow: 3px 3px 5px black, -3px -3px 5px lightblue;
+    box-shadow: 3px 3px 5px black, -3px -3px 5px black;
+}
+
+.opacidad{
+    opacity: 0.5;
+}
+
+/* TODO: background gradient */
+body{
+    background: linear-gradient(160deg, yellow, orange, var(--color-principal));
+    margin: 0 auto;
+    padding: 0 auto;
+}
+
+.posicion{
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlqBEQ9QfRtWRGxZObJl6LiWWnBE9vG8MJxw&s");
+    width: 250px;
+    height: 250px;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    background-position: left center;
+}
+
+/* TODO: variables */
+:root{
+    --color-principal: red;
+    --colores: hsl(204, 50%, 50%);
+}
+
+.colores{
+    width: 250px;
+    height: 250px;
+    background: hsl(from var(--colores) h s calc( l + 10));
+}
+
+.display{
+    display: inline-block;
+}
+
+/* Position */
+
+.buscar{
+    position: relative;
+    background-color: gray;
+    display: inline-block;
+    background-color: unset;
+}
+
+.buscar > input{
+    width: 200px;
+    height: 30px;
+    border-radius: 20px;
+    font: 600 16px Arial;
+    border: none;
+}
+
+.buscar > button{
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    height: 30px;
+    width: 30px;
+    background-color: hsl(from var(--colores) h s calc( l + 10));
+    position: absolute;
+    top: 1px;
+    left: 175px;
+}
+
+table{
+    border-collapse: collapse;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: left;
+}
+
+table th{
+    background-color: hsl(from var(--colores) h s calc( l + 10));
+    color: white;
+    text-align: center;
+}
+
+table td{
+    padding: 1rem;
+}
+
+table tr:last-of-type{
+    border-bottom: 3px solid hsl(from var(--colores) h s calc( l + 10));
+}
+
+ol.estilos-listas{
+    list-style-type: upper-roman;
+}
+
+::marker{
+    color: green;
+    content: "Only 5$ >>";
+}
+
+footer{
+    background-color: hsl(from var(--colores) h s calc( l + 10));
+    color: white;
+    text-align: center;
+    display: block;
+    clear: both;
+    width: 100vw;
+    margin: 0 auto;
+    bottom: 0 auto;
+
+}

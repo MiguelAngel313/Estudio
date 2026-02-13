@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+    <!-- TODO: Textual tags -->
+    <h1>Hello World &copy;</h1>
+
+    <hr>
+
+    <b><p>Texto</p></b>
+    
+    <pre>
+    Titulo 2
+    <p>parrafo2</p>
+    </pre>
+
+    <i>Parrafo normal</i>
+    <br>
+    <em>Parrafo con em</em>
+    <br>
+    <mark>Txto con mark</mark>
+
+    Texto completamente normal<sub> texto</sub>
+    <br>
+    Texto completamente normal <sup>texto</sup>
+
+    <a href="https://google.com">Enlace normal</a>
+
+    <!-- TODO: Lists and types -->
+    <hr>
+    lista ordenada
+    <ol>
+        <li>uno</li>
+        <li>dos</li>
+        <li>tres</li>
+    </ol>
+
+    <hr>
+    lista desordenada
+    <ul>
+        <li>uno</li>
+        <li>uno</li>
+        <li>uno</li>
+    </ul>
+
+    <hr>
+    lista de definicion
+    <dl>
+        <dt>Termino a definir</dt>
+        <dd>Definición del término completamente definido en una lista de definición</dd>
+    </dl>
+
+    <hr>
+    lista anidada
+    <ol>
+        <li>lista uno</li>
+        <ul>
+            <li>elemento</li>
+            <li>elemento</li>
+            <li>elemento</li>
+        </ul>
+        <li>Lista dos</li>
+        <ul>
+            <li>Elemento</li>
+            <li>Elemento</li>
+            <li>Elemento</li>
+        </ul>
+    </ol>
+    
+    <!-- TODO: Tables -->
+    <table style="border: 1px solid black;">
+        <!-- tr es table row: fila de la tabla -->
+        <tr style="border: 1px solid black;">
+            <!-- Table head: cabecera -->
+            <th style="border: 1px solid black;">Cabecera de la tabla</th>
+            <th style="border: 1px solid black;">Cabecera</th>
+            <th style="border: 1px solid black;">Cabecera</th>
+        </tr>
+        <tr style="border: 1px solid black;">
+            <!-- Table data: contenido de celdas de datos -->
+            <td style="border: 1px solid black;">Contenido</td>
+            <td style="border: 1px solid black;">Contenido</td>
+            <td style="border: 1px solid black;">Contenido</td>
+        </tr>
+    </table>
+
+    <p>Iframe</p>
+    <!-- TODO: Embedding media -->
+     <!-- iframe: incrustar contenido de otro sitio web -->
+     <iframe src="https://www.google.com/maps" title="Video" frameborder="0" allowfullscreen></iframe>
+    <p>Video</p>
+     <video src="https://youtu.be/YDvOEHfwM68?si=EHuZQDcbZapPzLD0" controls>Video</video>
+    <p>Audio</p>
+     <audio src="https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3" controls></audio>
+     <p>Imagen</p>
+     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgU6cuj28pO4QrdGwpE1J7GbWE503p9_XnOQ&s" alt="Texto alternativo" fetchpriority="low">
+
+
+     <!-- TODO: figure -->
+     <!-- TODO: fetchpriority -->
+
+     <figure>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgU6cuj28pO4QrdGwpE1J7GbWE503p9_XnOQ&s" alt="Texto alternativo" fetchpriority="high">
+        <figcaption>Caption de la imagen</figcaption>
+     </figure>
+
+     <!-- TODO: Using forms -->
+     <form action="pagina a la que se envia" method="post" enctype="multipart/form-data">
+        <!-- enctype necesario para subir archivos como videos. Por defecto viene en simple -->
+        <!-- Labels and inputs -->
+        <label for="username">Nombre de usuario:</label>
+        <input type="text" name="username">
+        <!-- Files -->
+         <!-- accept indica que se aceptan cualquier tipo de formato de video -->
+         <input type="file" accept="video/*">
+     </form>
+
+     <!-- TODO: semantic markup -->
+      <!-- Layouts tags -->
+       <header>
+        <h1>Cabecera</h1>
+        <p>Texto profesional</p>
+       </header>
+
+       <!-- Utilizado para definir una seccion de la página que contiene enlaces de navegación -->
+       <nav>
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Sobre nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+       </nav>
+
+       <!-- Define el contenido principal de la página -->
+       <main>
+        <article>
+            <h2>parte principal de la página</h2>
+        </article>
+       </main>
+
+       <aside>
+        contenido relacionado con el principal del que se puede prescindir en caso de que no se considere necesario pues no ayuda a la comprensión del contenido principal.
+       </aside>
+
+       <!-- Utilizado para agrupar contenido relacionado en una seccion -->
+       <section>
+        <!-- Contenido completamente independiente sin relación entre sí -->
+            <article>
+                <h1>Articulo 1</h1>
+                <p>Contenido del articulo 1</p>
+            </article>
+            <article>
+                <h1>Articulo 2</h1>
+                <p>Contenido del articulo 2</p>
+            </article>
+       </section>
+
+       <footer>
+        <p>Footer de la página &copy;</p>
+       </footer>
+       
+       <!-- Quotation/Citation -->
+       <p>El lenguaje <abbr title="Hyper Text Transfer Protocol">HTML</abbr> es genial (abbr)</p>
+       <p>Uno de mis libros favoritos es <cite>Hábitos atómicos</cite> (cite)</p>
+       <p>Una <dfn>fruta</dfn> es una perte madura de un árbol</p>
+
+       <address>
+        Nombre: Miguel Ángel <br>
+        Correo: correofalso@gmail.com <br>
+        Teléfono: me lo invento <br>
+        Dirección: Mi casita nevada
+       </address>
+
+       <blockquote cite="url de la cita externa">
+        Texto de la cita externa
+       </blockquote>
+
+       <p>Texto de cita con <q>cita</q></p>
+
+       <p>Precio recomendado <del>100€</del></p>
+
+       <p>Etiqueta <s>Textito 100€</s></p>
+
+       <p>Texto <ins>Subrayado/Insertado</ins></p>
+       
+</body>
+</html>
