@@ -1,8 +1,11 @@
 :root{
     --principal: hsl(99, 19%, 29%);
     --secundario: hsl(99, 49%, 29%);
+    --sidebar: hsl(240, 64%, 47%);
+    --main: hsl(180, 84%, 47%);
     --letra: hsl(1, 100%, 100%);
     --lateral: hsl(99, 77%, 15%);
+    --widgets: hsl(0, 100%, 84%);
 }
 
 body{
@@ -28,6 +31,20 @@ header{
     background-color: var(--secundario);
 }
 
+aside{
+    grid-area: aside;
+    background-color: var(--sidebar);
+}
+
+main{
+    grid-area: main;
+    background-color: var(--main);
+}
+
+section{
+    grid-area: section;
+    background-color: var(--widgets);
+}
 
 footer{
     grid-area: footer;
