@@ -1,0 +1,42 @@
+body{
+    margin: 0 auto;
+    min-width: 100vw;
+    background-color: lightblue;
+    color: aliceblue;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    background-color: lightseagreen;
+    min-width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.principal{
+    display: flex;
+    gap: 20px;
+}
+
+aside{
+    flex-basis: 300px;
+    flex-shrink: 0;
+    background-color: lightcoral;
+}
+
+main{
+    flex-grow: 1;
+    background-color: lightsteelblue;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Continuar por el punto 6 (Cards) */
