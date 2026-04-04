@@ -1,0 +1,23 @@
+body{
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    background-color: antiquewhite;
+}
+
+div{
+    width: 500px;
+    height: 500px;
+    margin: 200px;
+    background-color: cadetblue;
+    /* transition-duration: 500ms;
+    transition-property: background-color, transform;
+    transition-timing-function: ease-in-out;
+    transition-delay: 200ms; */
+    transition: all 500ms ease-in-out;
+}
+
+div:hover{
+    background-color: darksalmon;
+    transform: rotate(45deg);
+}
