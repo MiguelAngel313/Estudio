@@ -1,0 +1,46 @@
+body{
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(13, 13, 52);
+    align-content: center;
+}
+
+div{
+    border: 5px solid aqua;
+    border-radius: 10%;
+    width: 30px;
+    height: 30px;
+    margin: 300px;
+    text-align: center;
+    align-content: center;
+    font-size: xx-large;
+    box-shadow: 0 0 7px aqua, 0 0 7px aqua inset ;
+
+    animation-duration: 3000ms;
+    animation-name: girar;
+    animation-timing-function: ease;
+    animation-delay: 1000ms;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    
+}
+
+
+
+@keyframes girar {
+    0%{
+        transform: rotateZ(0deg) rotateX(0deg) rotateY(0deg);
+    }
+    30%{
+        transform: rotateZ(180deg) rotateX(0deg) rotateY(0deg);
+    }
+    60%{
+        transform: rotateZ(180deg) rotateX(180deg) rotateY(0deg);
+    }
+    100%{
+        transform: rotateZ(180deg) rotateX(180deg) rotateY(180deg);
+    }
+}
