@@ -14,6 +14,7 @@ body{
   border: 5px solid hsl(10, 10%, 80%);
   border-radius: 50%;
   box-shadow: 0 0 10px white, 0 0 7px white inset;
+  margin: 20px;
 }
 
 

@@ -1,0 +1,29 @@
+body{
+    background-color: antiquewhite;
+}
+
+h1{
+    font-size: 5rem;
+}
+
+h2{
+    font-size: 3rem;
+}
+
+@media (min-width: 480px){
+    h1{
+        color: red;
+    }
+}
+
+@media (min-width: 768px){
+    h2{
+        color: blue;
+    }
+}
+
+@media (min-width: 1024px){
+    h2{
+        color: green;
+    }
+}
