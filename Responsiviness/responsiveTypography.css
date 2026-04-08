@@ -1,0 +1,20 @@
+body{
+    margin: 0 auto;
+    background-color: antiquewhite;
+    text-align: center;
+}
+
+h1{
+    font-size: clamp(2rem, 5vw + 1rem, 4rem);
+    color: cornflowerblue;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 2vw + 1rem, 3rem);
+    color: darkseagreen;
+}
+
+p{
+    font-size: clamp(1rem, 1vw + 1rem, 2rem);
+    color: darkslateblue;
+}
