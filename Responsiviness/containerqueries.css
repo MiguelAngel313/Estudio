@@ -1,0 +1,42 @@
+body{
+    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    background-color: antiquewhite;
+    padding: 20px;
+}
+
+.contenedor1{
+    container-type: size;
+    background-color: cadetblue;
+    width: 300px;
+    height: 300px;
+}
+
+.contenedor2{
+    container: segundo / inline-size;
+    background-color: cornflowerblue;
+    width: 300px;
+    height: 300px;
+}
+
+.card{
+    background-color: aliceblue;
+    width: fit-content;
+}
+.card1{
+    background-color: aliceblue;
+    width: fit-content;
+}
+
+@container (height > 200px) {
+    .card{
+        background-color: aquamarine;
+    }
+}
+
+@container segundo (width > 200px){
+    .card1{
+        background-color: salmon;
+    }
+}
