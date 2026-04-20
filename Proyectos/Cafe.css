@@ -1,0 +1,48 @@
+:root{
+    --principal: hsl(354, 45%, 17%);
+    --secundario: hsl(346, 100%, 96%);
+    --secundario2: hsl(346, 68%, 88%);
+}
+
+body{
+    margin: 0 auto;
+    padding: 5vw;
+    min-height: 100vh;
+    min-width: 100vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 1fr 1fr;
+    grid-template-areas: "header " "aside" "main";
+    background-color: var(--principal);
+    color: var(--secundario);
+    border-radius: 10px;
+    padding: 1vw;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    grid-area: header;
+    font-size: xx-small;
+    max-width: 75%;
+}
+
+header .cafe{
+    align-self: center;
+}
+
+header .enlaces{
+    display: inline-block;
+    align-self: center;
+    text-align: right;
+}
+
+a{
+    color: var(--secundario);
+    text-decoration: none;
+}
+
