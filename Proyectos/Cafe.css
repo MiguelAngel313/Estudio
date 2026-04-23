@@ -39,18 +39,20 @@ header{
 
 header .cafe{
     align-self: center;
+    justify-self: start;
 }
 
 header .enlaces{
     display: inline-block;
     align-self: center;
     text-align: right;
+    justify-self: end;
 }
 
 a{
     color: var(--secundario);
     text-decoration: none;
-    margin: 5px;
+    margin: 4px;
 }
 
 img{
