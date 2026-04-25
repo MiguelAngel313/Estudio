@@ -49,6 +49,17 @@ header .enlaces{
     justify-self: end;
 }
 
+h2{
+    font-family: "Playwrite DE SAS", cursive;
+    font-weight: 400;
+    color: var(--botones);
+}
+
+.subtitulo{
+    text-decoration: underline;
+    text-decoration-color: var(--botones);
+}
+
 a{
     color: var(--secundario);
     text-decoration: none;
@@ -64,11 +75,14 @@ aside{
     grid-area: aside;
 }
 
+button{
+    font-size: x-large;
+    border-radius:30px;
+}
+
 .boton1{
     background-color: transparent;
     border: 2px solid var(--botones);
-    border-radius:30px;
-    font-size: x-large;
     padding: 10px;
     color: var(--botones);
 }
@@ -76,8 +90,6 @@ aside{
 .boton2{
     background-color: var(--secundario);
     border: none;
-    border-radius: 30px;
-    font-size: x-large;
     padding: 10px;
     color: var(--principal);
 }
@@ -93,4 +105,40 @@ main{
     margin: 20px;
     margin-top: 0px;
     grid-area: main;
+}
+
+@media (min-width: 820px){
+
+    .container{
+        width: 95vw;
+    }
+
+    header{
+        grid-template-columns: 100px 1fr;
+        font-size: small;
+    }
+
+    img{
+        min-width: 100%;
+    }
+
+    main{
+        font-size: xx-large;
+    }
+
+    button{
+        font-size: 10vw;
+        display: inline-block;
+        margin: 20px;
+        border-radius: 100px;
+    }
+
+    .botones{
+        display: block;
+        justify-self: center;
+        min-width: 100%;
+        text-align: center;
+    }
+
+    
 }
