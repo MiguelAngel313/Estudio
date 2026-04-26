@@ -64,6 +64,7 @@ a{
     color: var(--secundario);
     text-decoration: none;
     margin: 4px;
+    cursor: pointer;
 }
 
 img{
@@ -107,7 +108,7 @@ main{
     grid-area: main;
 }
 
-@media (min-width: 820px){
+@media (min-width: 820px) and (max-width: 1200px){
 
     .container{
         width: 95vw;
@@ -141,4 +142,58 @@ main{
     }
 
     
+}
+
+@media (min-width: 1200px){
+    .container{
+        width: 90vw;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px 1fr 1fr;
+        grid-template-areas: "header header" "main aside" "main aside";
+    }
+
+    header{
+        font-size: medium;
+        grid-area: header;
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .enlaces > a:first-child{
+        text-decoration: underline;
+        text-decoration-color: var(--botones);
+    }
+
+    a{
+        margin-left: 40px;
+        cursor: pointer;
+    }
+
+    main{
+        grid-area: main;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 1fr ;
+        font-size: x-large;
+        grid-template-areas: "titulo" "contenido";
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    .titulo{
+        grid-area: titulo;
+    }
+
+    .contenido{
+        grid-area: contenido;
+    }
+
+    button{
+        font-size: xx-large;
+    }
 }
