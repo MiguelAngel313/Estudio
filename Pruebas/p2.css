@@ -1,5 +1,11 @@
+:root{
+    --fondo: hsl(59, 73%, 88%);
+}
+
+
+
 body{
-    background-color: hsl(59, 73%, 88%);
+    background-color: hsl(from var(--fondo) calc(h + 100) s calc(l - 5));
     min-height: 100vh;
     font-family: system-ui;
 }
