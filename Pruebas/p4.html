@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body{
+            min-height: 100vh;
+            background-image: linear-gradient(to bottom,hsl(254, 77%, 58%), hsl(254, 74%, 64%));
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div{
+            width: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        img:hover{
+            transition: all 0.5s ease-in-out;
+            width: calc(720px / 2);
+            height: calc(893px / 2);
+            filter: none;
+        }
+        img{
+            transition: all 0.5s ease-in-out;
+            width: calc(720px / 4);
+            height: calc(893px / 2);
+            filter: grayscale(100%);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img style="border-right: 2px solid black;" src="https://r-charts.com/es/miscelanea/procesamiento-imagenes-magick_files/figure-html/color-fondo-imagen-r.png" alt="">
+        <img src="https://r-charts.com/es/miscelanea/procesamiento-imagenes-magick_files/figure-html/color-fondo-imagen-r.png" alt="">
+        <img style="border-left: 2px solid black;" src="https://r-charts.com/es/miscelanea/procesamiento-imagenes-magick_files/figure-html/color-fondo-imagen-r.png" alt="">
+    </div>
+</body>
+</html>
