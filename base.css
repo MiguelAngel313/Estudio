@@ -1,6 +1,9 @@
 :root{
-    --color-principal: hsl(212, 21%, 14%);
-    --color-letra: hsl(210, 3%, 87%);
+    --color-principal: hsl(218, 23%, 20%);
+    --color-letra: hsl(from var(--color-principal) h s calc(l + 20));
+    --color-contenedores: hsl(from var(--color-principal) h s calc(l + 10));
+    --color-borde: hsl(from var(--color-principal) h s calc(l - 5));
+    --color-fondo: hsl(from var(--color-principal) h s calc(l - 10));
 }
 
 *{
@@ -11,5 +14,5 @@
 
 body{
     margin: 0 auto;
-    background-color: hsl(212, 21%, 14%);
+    background-color: var(--color-fondo);
 }
