@@ -1,0 +1,359 @@
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+  .hero-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e2f5ee 0%, #eef4fb 45%, #e6edff 100%);
+    font-family: 'Inter', var(--font-sans), sans-serif;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bg-orb-1 {
+    position: absolute;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(16,185,129,0.2) 0%, transparent 70%);
+    top: -100px; left: -100px;
+    pointer-events: none;
+  }
+  .bg-orb-2 {
+    position: absolute;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+    bottom: -150px; right: -150px;
+    pointer-events: none;
+  }
+  .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,0,0,0.035) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .top-bar {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 48px;
+  }
+
+  .logo {
+    position: absolute;
+    left: 48px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .logo-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #10b981, #2563eb);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .logo-icon svg { width: 20px; height: 20px; fill: white; }
+  .logo-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: #1e293b;
+    letter-spacing: 0.01em;
+  }
+  .logo-name span { color: #10b981; }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255,255,255,0.55);
+    border: 0.5px solid rgba(0,0,0,0.09);
+    border-radius: 50px;
+    padding: 6px 8px;
+    backdrop-filter: blur(12px);
+  }
+  nav a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(30,41,59,0.6);
+    padding: 7px 18px;
+    border-radius: 50px;
+    transition: all 0.2s;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  nav a:hover { color: #1e293b; background: rgba(0,0,0,0.05); }
+  nav a.active {
+    background: rgba(16,185,129,0.12);
+    color: #0d9e6e;
+    border: 0.5px solid rgba(16,185,129,0.35);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 48px 80px;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(37,99,235,0.08);
+    border: 0.5px solid rgba(37,99,235,0.25);
+    border-radius: 50px;
+    padding: 6px 16px;
+    margin-bottom: 36px;
+  }
+  .badge-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #2563eb;
+  }
+  .badge span {
+    font-size: 12px;
+    color: #2563eb;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .hero-title {
+    font-size: 58px;
+    font-weight: 300;
+    line-height: 1.1;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+    max-width: 760px;
+  }
+  .hero-title strong {
+    font-weight: 500;
+    background: linear-gradient(90deg, #10b981, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-subtitle {
+    font-size: 17px;
+    font-weight: 300;
+    color: #475569;
+    line-height: 1.7;
+    max-width: 520px;
+    margin-bottom: 52px;
+  }
+
+  .cta-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #10b981;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 13px 28px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover { background: #0d9e6e; transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.6);
+    color: #2563eb;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 13px 28px;
+    border-radius: 50px;
+    border: 0.5px solid rgba(37,99,235,0.3);
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover { background: rgba(37,99,235,0.08); transform: translateY(-1px); }
+
+  .btn-arrow { font-size: 16px; }
+
+  .services-strip {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 0 48px 48px;
+  }
+
+  .service-card {
+    background: rgba(255,255,255,0.6);
+    border: 0.5px solid rgba(0,0,0,0.07);
+    border-radius: 16px;
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 220px;
+    flex: 1;
+    max-width: 280px;
+    transition: border-color 0.2s, background 0.2s;
+    backdrop-filter: blur(8px);
+  }
+  .service-card:hover { background: rgba(255,255,255,0.8); border-color: rgba(0,0,0,0.12); }
+  .service-card + .service-card { margin-left: 12px; }
+
+  .service-icon {
+    width: 42px; height: 42px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .icon-green { background: rgba(16,185,129,0.12); }
+  .icon-green svg { color: #10b981; }
+  .icon-blue { background: rgba(37,99,235,0.1); }
+  .icon-blue svg { color: #2563eb; }
+
+  .service-label {
+    font-size: 11px;
+    color: #94a3b8;
+    font-weight: 400;
+    margin-bottom: 3px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .service-name {
+    font-size: 15px;
+    color: #1e293b;
+    font-weight: 400;
+  }
+
+  .divider {
+    width: 1px;
+    height: 50px;
+    background: rgba(0,0,0,0.07);
+    margin: 0 6px;
+    flex-shrink: 0;
+  }
+</style>
+
+<div class="hero-wrapper">
+  <div class="bg-grid"></div>
+  <div class="bg-orb-1"></div>
+  <div class="bg-orb-2"></div>
+
+  <div class="top-bar">
+    <a class="logo" href="#">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <span class="logo-name">nexus<span>360</span></span>
+    </a>
+
+    <nav>
+      <a href="#" class="active">Inicio</a>
+      <a href="#">Administración</a>
+      <a href="#">Web</a>
+      <a href="#">Nosotros</a>
+      <a href="#">Contacto</a>
+    </nav>
+  </div>
+
+  <div class="hero-content">
+    <div class="badge">
+      <div class="badge-dot"></div>
+      <span>Servicios profesionales</span>
+    </div>
+
+    <h1 class="hero-title">
+      Finanzas inteligentes.<br>
+      <strong>Soluciones digitales.</strong>
+    </h1>
+
+    <p class="hero-subtitle">
+      Gestión financiera estratégica y desarrollo de aplicaciones web a medida. Todo lo que tu negocio necesita para crecer, en un solo lugar.
+    </p>
+
+    <div class="cta-group">
+      <a class="btn-primary" href="#">
+        Explorar servicios <span class="btn-arrow">→</span>
+      </a>
+      <a class="btn-secondary" href="#">
+        Hablar con nosotros <span class="btn-arrow">↗</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="services-strip">
+    <div class="service-card">
+      <div class="service-icon icon-green">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+        </svg>
+      </div>
+      <div>
+        <div class="service-label">Servicio 01</div>
+        <div class="service-name">Administración financiera</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="service-card">
+      <div class="service-icon icon-blue">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+        </svg>
+      </div>
+      <div>
+        <div class="service-label">Servicio 02</div>
+        <div class="service-name">Desarrollo de aplicaciones web</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="service-card">
+      <div class="service-icon icon-green">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      <div>
+        <div class="service-label">Soporte</div>
+        <div class="service-name">Consultoría personalizada</div>
+      </div>
+    </div>
+  </div>
+</div>
