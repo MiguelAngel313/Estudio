@@ -7,20 +7,56 @@ body {
 .animated-bg {
   position: fixed;
   inset: 0;
+  width: 100%;
+  height: 100%;
+
   background:
-    radial-gradient(circle at 20% 80%, rgba(16,185,129,0.25), transparent 30%),
-    radial-gradient(circle at 80% 20%, rgba(37,99,235,0.25), transparent 30%),
+    radial-gradient(circle at 20% 80%, rgba(16,185,129,0.35) 0%, transparent 35%),
+    radial-gradient(circle at 80% 20%, rgba(37,99,235,0.30) 0%, transparent 35%),
+    radial-gradient(circle at 50% 50%, rgba(13,158,110,0.15) 0%, transparent 40%),
     linear-gradient(135deg, #0A0F1A 0%, #111827 100%);
-    
-  animation: moveBackground 1s ease-in-out infinite alternate;
+
+  background-size: 150% 150%;
+
+  animation:
+    gradientMove 12s ease infinite,
+    floatBackground 18s ease-in-out infinite alternate;
+
+  filter: blur(0px);
 }
 
-@keyframes moveBackground {
+@keyframes gradientMove {
+  0% {
+    background-position:
+      20% 80%,
+      80% 20%,
+      50% 50%,
+      0% 0%;
+  }
+
+  50% {
+    background-position:
+      30% 70%,
+      70% 30%,
+      60% 40%,
+      100% 100%;
+  }
+
+  100% {
+    background-position:
+      20% 80%,
+      80% 20%,
+      50% 50%,
+      0% 0%;
+  }
+}
+
+@keyframes floatBackground {
   0% {
     transform: scale(1) translate(0px, 0px);
   }
 
   100% {
-    transform: scale(1.1) translate(-20px, -10px);
+    transform: scale(1.08) translate(-40px, -20px);
   }
 }
