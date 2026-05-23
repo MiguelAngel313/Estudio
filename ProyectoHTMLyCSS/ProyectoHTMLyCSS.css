@@ -18,6 +18,15 @@
 
   /* Colores cristales */
   --clr-fondo-verde-cristal: hsla(160, 85%, 34%, 0.1);
+
+  /* Tipografia */
+  --ft-Alexandria: "Alexandria", sans-serif;
+  --ft-Alexandria-weight: 400;
+  --ft-Abyssinica: "Abyssinica SIL", serif;
+  --ft-Abyssinica-weight: 100;
+
+  /* Gradientes */
+  --gradiente-verde-azul: linear-gradient(90deg, var(--clr-verde-menta) 0%, var(--clr-royal-blue) 100%);
 }
 
 * {
@@ -36,6 +45,7 @@
     sans-serif;
   color: var(--clr-letra-clarita);
   text-decoration: none;
+  font-family: var(--ft-Abyssinica);
 }
 
 body {
@@ -52,8 +62,8 @@ header{
 
 
 header img{
-  width: 100px;
-  height: 100px;
+  max-width: 100px;
+  max-height: 100px;
 }
 
 nav{
@@ -61,7 +71,7 @@ nav{
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    gap: 20px;
+    gap: 2rem;
     padding: 0px 0px;
     position: absolute;
     left:50%;
@@ -78,7 +88,7 @@ nav{
   /* Safari y Chrome */
   -webkit-backdrop-filter: blur(12px);
 
-  padding: 10px 20px;
+  padding: 5px 10px;
 
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.2),
@@ -89,6 +99,10 @@ nav{
 .cristal a {
   color: var(--clr-letra-cristal);
   margin: 0 auto;
+  font-family: var(--ft-Alexandria);
+  font-size: clamp(10px, 1vw + 0.1rem, 30px) !important;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
 }
 
 .seleccionado {
@@ -178,4 +192,41 @@ nav{
   100% {
     transform: scale(1.08) translate(-40px, -20px);
   }
+}
+
+
+/* Main */
+aside{
+  display: flex;
+  justify-content: center;
+}
+.blue-info{
+  font-family: var(--ft-Alexandria);
+  color: var(--clr-letra-azul);
+  background-color: #0b1222;
+  border-radius: 30px;
+  padding: 2px 10px;
+  border: 1px solid var(--clr-borde-cristal);
+  max-width: fit-content;
+}
+
+.gradiente{
+  background: var(--gradiente-verde-azul);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+h1{
+  margin: 0 auto;
+  font-size: clamp(2px, 3vw + 1rem, 70px);
+  padding: 0px;
+  width: fit-content;
 }
