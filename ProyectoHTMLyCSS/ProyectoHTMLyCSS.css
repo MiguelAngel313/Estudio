@@ -17,7 +17,9 @@
   --clr-letra-azul: hsl(212, 96%, 78%);
 
   /* Colores cristales */
-  --clr-fondo-verde-cristal: hsla(160, 85%, 34%, 0.1);
+  --clr-fondo-verde-cristal: hsla(160, 85%, 4%, 0.2);
+  --clr-fondo-azul-cristal: hsla(221, 83%, 53%, 0.2);
+  --clr-fondo-morado-cristal: hsla(278, 74%, 61%, 0.2);
 
   /* Tipografia */
   --ft-Alexandria: "Alexandria", sans-serif;
@@ -46,12 +48,17 @@
   color: var(--clr-letra-clarita);
   text-decoration: none;
   font-family: var(--ft-Abyssinica);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 body {
   margin: 0 auto;
+  padding: 0;
   background-color: var(--clr-fondo-pagina);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header{
@@ -91,7 +98,7 @@ nav{
   padding: 5px 10px;
 
   box-shadow:
-    0 8px 32px rgba(0, 0, 0, 0.2),
+    0 4px 32px rgba(0, 0, 0, 0.2),
     inset 1px 1px 1px rgba(255, 255, 255, 0.45),
     inset -1px -1px 1px rgba(255, 255, 255, 0.05);
 }
@@ -100,7 +107,7 @@ nav{
   color: var(--clr-letra-cristal);
   margin: 0 auto;
   font-family: var(--ft-Alexandria);
-  font-size: clamp(10px, 1vw + 0.1rem, 30px) !important;
+  font-size: clamp(12px, 0.7vw + 0.1rem, 30px) !important;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
 }
@@ -199,9 +206,12 @@ nav{
 aside{
   display: flex;
   justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 .blue-info{
   font-family: var(--ft-Alexandria);
+  font-weight: 300;
   color: var(--clr-letra-azul);
   background-color: #0b1222;
   border-radius: 30px;
@@ -218,6 +228,7 @@ aside{
 }
 
 main{
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -229,4 +240,124 @@ h1{
   font-size: clamp(2px, 3vw + 1rem, 70px);
   padding: 0px;
   width: fit-content;
+  line-height: 1.1;
+}
+
+.info{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+p{
+  white-space: wrap;
+  max-width: 30vw;
+}
+
+.buttons{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+button{
+  padding: 0.8em;
+  font-size: clamp(12px, 0.8vw + 0.1rem, 30px);
+  border-radius: 30px;
+  min-width: 10vw;
+  cursor: pointer;
+}
+
+.green-button{
+  background-color: var(--clr-verde-oscuro);
+  color: var(--clr-letra-clarita);
+  border: none;
+}
+
+.blue-button{
+  background: var(--clr-fondo-azul-cristal);
+  color: var(--clr-letra-azul);
+  border: 1px solid var(--clr-borde-cristal);
+}
+
+.servicios{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5em;
+  margin-top: 4rem;
+}
+
+.servicio{
+  display: flex;
+  text-align: left;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 300px;
+  min-height: 150px;
+  text-align: center;
+}
+
+.servicio > img{
+  padding: 5px;
+  border-radius: 10px;
+  min-width: 4.5em;
+  margin: 5px;
+}
+
+img[alt="dollar"]{
+  background: var(--clr-fondo-verde-cristal);
+  border: 1px solid var(--clr-borde-cristal);
+
+  backdrop-filter: blur(12px);
+  /* Safari y Chrome */
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.45),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.05);
+}
+img[alt="code"]{
+  background: var(--clr-fondo-azul-cristal);
+  border: 1px solid var(--clr-borde-cristal);
+
+  backdrop-filter: blur(12px);
+  /* Safari y Chrome */
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.45),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.05);
+}
+img[alt="users"]{
+  background: var(--clr-fondo-morado-cristal);
+  border: 1px solid var(--clr-borde-cristal);
+
+  backdrop-filter: blur(12px);
+  /* Safari y Chrome */
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.45),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.05);
+}
+
+.texto{
+  display: flex;
+  flex-direction: column;
+}
+
+.texto > span{
+  font-size: clamp(12px, 0.8vw + 0.1rem, 30px);
+  font-weight: 300;
+  color: var(--clr-letra-cristal);
+  text-align: center;
+}
+
+footer{
+  text-align: center;
+  bottom: 0;
+  align-self: center;
 }
