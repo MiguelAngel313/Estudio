@@ -55,10 +55,10 @@ body {
   margin: 0 auto;
   padding: 0;
   background-color: var(--clr-fondo-pagina);
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-width: 100vw;
 }
 
 header{
@@ -206,8 +206,8 @@ nav{
 aside{
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  /*margin-top: 2rem;
+   margin-bottom: 2rem; */
 }
 .blue-info{
   font-family: var(--ft-Alexandria);
@@ -246,7 +246,7 @@ h1{
 .info{
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 p{
@@ -258,7 +258,7 @@ p{
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 button{
