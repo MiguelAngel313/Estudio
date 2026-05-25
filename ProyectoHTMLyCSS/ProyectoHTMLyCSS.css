@@ -110,6 +110,13 @@ nav{
   font-size: clamp(12px, 0.7vw + 0.1rem, 30px) !important;
   text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
+  transition: transform 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+}
+
+.cristal a:hover{
+  transition: transform 0.2s ease-in-out, text-shadow 0.2s ease-in-out;
+  text-shadow: 0 0px 4px rgba(240, 240, 240, 0.2);
+  transform: scale(1.04);
 }
 
 .seleccionado {
@@ -297,6 +304,16 @@ button{
   min-width: 300px;
   min-height: 150px;
   text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.servicio:hover{
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transform: scale(1.04);
+  box-shadow: 0 0 4px rgba(202, 202, 202, 0.2),
+    inset 1px 1px 1px rgba(255, 255, 255, 0.45),
+    inset -1px -1px 1px rgba(255, 255, 255, 0.05);
 }
 
 .servicio > img{
